@@ -2,10 +2,12 @@ import torchvision
 
 from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
 
-def create_model(num_classes, pretrained=True, coco_model=False):
+def create_model(
+    num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
+    ):
     # Load Faster RCNN pre-trained model
     model = torchvision.models.detection.fasterrcnn_mobilenet_v3_large_fpn(
-        weights='DEFAULT'
+        weights='DEFAULT', box_detections_per_img=box_detections_per_img
     )
     if coco_model: # Return the COCO pretrained model for COCO classes.
         return model, coco_model

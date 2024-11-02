@@ -72,7 +72,9 @@ class CustomResNet(nn.Module):
         x = self.linear(x)
         return x
 
-def create_model(num_classes, pretrained=True, coco_model=False):
+def create_model(
+    num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
+    ):
     # Load the pretrained ResNet18 backbone.
     # if pretrained:
         # print('Loading Tiny ImageNet weights...')
@@ -121,6 +123,7 @@ def create_model(num_classes, pretrained=True, coco_model=False):
         num_classes=num_classes,
         rpn_anchor_generator=anchor_generator,
         box_roi_pool=roi_pooler
+        box_detections_per_img=box_detections_per_img
     )
     return model
 

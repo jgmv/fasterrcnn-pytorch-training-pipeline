@@ -21,7 +21,9 @@ except:
     print('https://github.com/sovit-123/vision_transformers')
     assert ('vision_transformers' in sys.modules), 'vision_transformers not found'
 
-def create_model(num_classes, pretrained=True, coco_model=False):
+def create_model(
+    num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
+    ):
     # Load the backbone.
     model_backbone = mobilevit_xxs(pretrained=pretrained)
 
@@ -52,7 +54,8 @@ def create_model(num_classes, pretrained=True, coco_model=False):
         backbone=backbone,
         num_classes=num_classes,
         rpn_anchor_generator=anchor_generator,
-        box_roi_pool=roi_pooler
+        box_roi_pool=roi_pooler,
+        box_detections_per_img=box_detections_per_img
     )
     return model
 

@@ -114,6 +114,12 @@ def parse_opt():
         action='store_true'
     )
     parser.add_argument(
+        '--box_detections_per_img',
+        default=100,
+        type=int ,
+        help='maximum number of detections per image'
+    )
+    parser.add_argument(
         '--log-json',
         dest='log_json',
         action='store_true',
@@ -159,10 +165,16 @@ def main(args):
             CLASSES = data_configs['CLASSES']
         try:
             build_model = create_model[args['model']]
-            model, coco_model = build_model(num_classes=NUM_CLASSES, coco_model=True)
+            model, coco_model = build_model(
+                num_classes=NUM_CLASSES, coco_model=True,
+                box_detections_per_img=args['box_detections_per_img']
+            )
         except:
             build_model = create_model['fasterrcnn_resnet50_fpn_v2']
-            model, coco_model = build_model(num_classes=NUM_CLASSES, coco_model=True)
+            model, coco_model = build_model(
+                num_classes=NUM_CLASSES, coco_model=True,
+                box_detections_per_img=args['box_detections_per_img']
+            )
     # Load weights if path provided.
     if args['weights'] is not None:
         checkpoint = torch.load(args['weights'], map_location=DEVICE)
@@ -176,7 +188,10 @@ def main(args):
             build_model = create_model[str(args['model'])]
         except:
             build_model = create_model[checkpoint['model_name']]
-        model = build_model(num_classes=NUM_CLASSES, coco_model=False)
+        model = build_model(
+            num_classes=NUM_CLASSES, coco_model=False,
+            box_detections_per_img=args['box_detections_per_img']
+        )
         model.load_state_dict(checkpoint['model_state_dict'])
     model.to(DEVICE).eval()
 

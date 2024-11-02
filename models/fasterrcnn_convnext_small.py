@@ -10,7 +10,10 @@ import torchvision
 from torchvision.models.detection import FasterRCNN
 from torchvision.models.detection.rpn import AnchorGenerator
 
-def create_model(num_classes=81, pretrained=True, coco_model=False):
+def create_model(
+    num_classes=81, pretrained=True, coco_model=False,
+    box_detections_per_img=100
+    ):
     # Load the pretrained features.
     if pretrained:
         backbone = torchvision.models.convnext_small(weights='DEFAULT').features
@@ -43,7 +46,8 @@ def create_model(num_classes=81, pretrained=True, coco_model=False):
         backbone=backbone,
         num_classes=num_classes,
         rpn_anchor_generator=anchor_generator,
-        box_roi_pool=roi_pooler
+        box_roi_pool=roi_pooler,
+        box_detections_per_img=box_detections_per_img
     )
 
     return model

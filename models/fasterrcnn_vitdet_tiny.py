@@ -291,7 +291,9 @@ class SimpleFeaturePyramid(Backbone):
         assert len(self._out_features) == len(results)
         return {f: res for f, res in zip(self._out_features, results)}
 
-def create_model(num_classes=81, pretrained=True, coco_model=False):
+def create_model(
+    num_classes=81, pretrained=True, coco_model=False,
+    box_detections_per_img=100):
     # Base
     embed_dim, depth, num_heads, dp = 192, 12, 3, 0.1
     # Load the pretrained SqueezeNet1_1 backbone.
@@ -353,7 +355,8 @@ def create_model(num_classes=81, pretrained=True, coco_model=False):
     model = FasterRCNN(
         backbone=backbone,
         num_classes=num_classes,
-        box_roi_pool=roi_pooler
+        box_roi_pool=roi_pooler,
+        box_detections_per_img=box_detections_per_img
     )
     return model
 

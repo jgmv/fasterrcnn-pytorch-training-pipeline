@@ -102,7 +102,9 @@ class DarkNet(nn.Module):
         x = self.fcs(x)
         return x
 
-def create_model(num_classes, pretrained=True, coco_model=False):
+def create_model(
+    num_classes, pretrained=True, coco_model=False,
+    box_detections_per_img=100):
     # Load the Mini DarkNet model features.
     backbone = DarkNet(num_classes=10).features
 
@@ -133,7 +135,8 @@ def create_model(num_classes, pretrained=True, coco_model=False):
         backbone=backbone,
         num_classes=num_classes,
         rpn_anchor_generator=anchor_generator,
-        box_roi_pool=roi_pooler
+        box_roi_pool=roi_pooler,
+        box_detections_per_img=box_detections_per_img
     )
     return model
 

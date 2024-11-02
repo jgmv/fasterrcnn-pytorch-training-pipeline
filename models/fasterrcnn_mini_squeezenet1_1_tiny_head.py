@@ -66,7 +66,10 @@ class FastRCNNPredictor(nn.Module):
 
         return scores, bbox_deltas
 
-def create_model(num_classes=81, pretrained=True, coco_model=True):
+def create_model(
+    num_classes=81, pretrained=True, coco_model=True,
+    box_detections_per_img=100
+    ):
     # Load the pretrained SqueezeNet1_1 backbone.
     backbone = torchvision.models.squeezenet1_1(pretrained=pretrained).features
 
@@ -118,7 +121,8 @@ def create_model(num_classes=81, pretrained=True, coco_model=True):
         rpn_anchor_generator=anchor_generator,
         box_roi_pool=roi_pooler,
         box_head=box_head,
-        box_predictor=box_predictor
+        box_predictor=box_predictor,
+        box_detections_per_img=box_detections_per_img
     )
     return model
 

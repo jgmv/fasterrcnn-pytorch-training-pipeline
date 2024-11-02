@@ -190,10 +190,16 @@ def parse_opt():
         help='use automatic mixed precision'
     )
     parser.add_argument(
+        '--box_detections_per_img',
+        default=100,
+        type=int ,
+        help='maximum number of detections per image'
+    )
+    parser.add_argument(
         '--seed',
         default=0,
         type=int ,
-        help='golabl seed for training'
+        help='global seed for training'
     )
     parser.add_argument(
         '--project-dir',
@@ -303,7 +309,10 @@ def main(args):
     if args['weights'] is None:
         print('Building model from scratch...')
         build_model = create_model[args['model']]
-        model = build_model(num_classes=NUM_CLASSES, pretrained=True)
+        model = build_model(
+            num_classes=NUM_CLASSES, pretrained=True,
+            box_detections_per_img=args['box_detections_per_img']
+        )
 
     # Load pretrained weights if path is provided.
     if args['weights'] is not None:
@@ -318,7 +327,10 @@ def main(args):
 
         # Build the new model with number of classes same as checkpoint.
         build_model = create_model[args['model']]
-        model = build_model(num_classes=old_classes)
+        model = build_model(
+            num_classes=old_classes,
+            box_detections_per_img=args['box_detections_per_img']
+        )
         # Load weights.
         model.load_state_dict(ckpt_state_dict)
 
