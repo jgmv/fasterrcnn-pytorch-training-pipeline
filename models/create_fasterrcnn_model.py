@@ -4,7 +4,7 @@ def return_fasterrcnn_resnet50_fpn(
     num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
 ):
     model = fasterrcnn_resnet50_fpn.create_model(
-        num_classes, pretrained=pretrained, coco_model=coco_model
+        num_classes, pretrained=pretrained, coco_model=coco_model,
         box_detections_per_img=box_detections_per_img
     )
     return model
@@ -13,7 +13,7 @@ def return_fasterrcnn_mobilenetv3_large_fpn(
     num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
 ):
     model = fasterrcnn_mobilenetv3_large_fpn.create_model(
-        num_classes, pretrained=pretrained, coco_model=coco_model
+        num_classes, pretrained=pretrained, coco_model=coco_model,
         box_detections_per_img=box_detections_per_img
     )
     return model
@@ -22,7 +22,7 @@ def return_fasterrcnn_mobilenetv3_large_320_fpn(
     num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
 ):    
     model = fasterrcnn_mobilenetv3_large_320_fpn.create_model(
-        num_classes, pretrained=pretrained, coco_model=coco_model
+        num_classes, pretrained=pretrained, coco_model=coco_model,
         box_detections_per_img=box_detections_per_img
     )
     return model
@@ -31,7 +31,7 @@ def return_fasterrcnn_resnet18(
     num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
 ):
     model = fasterrcnn_resnet18.create_model(
-        num_classes, pretrained, coco_model
+        num_classes, pretrained, coco_model,
         box_detections_per_img=box_detections_per_img
     )
     return model
@@ -40,7 +40,7 @@ def return_fasterrcnn_custom_resnet(
     num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
 ):
     model = fasterrcnn_custom_resnet.create_model(
-        num_classes, pretrained, coco_model
+        num_classes, pretrained, coco_model,
         box_detections_per_img=box_detections_per_img
     )
     return model
@@ -49,7 +49,7 @@ def return_fasterrcnn_darknet(
     num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
 ):
     model = fasterrcnn_darknet.create_model(
-        num_classes, pretrained, coco_model
+        num_classes, pretrained, coco_model,
         box_detections_per_img=box_detections_per_img
     )
     return model
@@ -58,7 +58,7 @@ def return_fasterrcnn_squeezenet1_0(
     num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
 ):
     model = fasterrcnn_squeezenet1_0.create_model(
-        num_classes, pretrained, coco_model
+        num_classes, pretrained, coco_model,
         box_detections_per_img=box_detections_per_img
     )
     return model
@@ -67,7 +67,7 @@ def return_fasterrcnn_squeezenet1_1(
     num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
 ):
     model = fasterrcnn_squeezenet1_1.create_model(
-        num_classes, pretrained, coco_model
+        num_classes, pretrained, coco_model,
         box_detections_per_img=box_detections_per_img
     )
     return model
@@ -76,7 +76,7 @@ def return_fasterrcnn_mini_darknet(
     num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
 ):
     model = fasterrcnn_mini_darknet.create_model(
-        num_classes, pretrained, coco_model
+        num_classes, pretrained, coco_model,
         box_detections_per_img=box_detections_per_img
     )
     return model
@@ -85,7 +85,7 @@ def return_fasterrcnn_squeezenet1_1_small_head(
     num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
 ):
     model = fasterrcnn_squeezenet1_1_small_head.create_model(
-        num_classes, pretrained, coco_model
+        num_classes, pretrained, coco_model,
         box_detections_per_img=box_detections_per_img
     )
     return model
@@ -94,7 +94,7 @@ def return_fasterrcnn_mini_squeezenet1_1_small_head(
     num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
 ):
     model = fasterrcnn_mini_squeezenet1_1_small_head.create_model(
-        num_classes, pretrained, coco_model
+        num_classes, pretrained, coco_model,
         box_detections_per_img=box_detections_per_img
     )
     return model
@@ -103,7 +103,7 @@ def return_fasterrcnn_mini_squeezenet1_1_tiny_head(
     num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
 ):
     model = fasterrcnn_mini_squeezenet1_1_tiny_head.create_model(
-        num_classes, pretrained, coco_model
+        num_classes, pretrained, coco_model,
         box_detections_per_img=box_detections_per_img
     )
     return model
@@ -112,7 +112,7 @@ def return_fasterrcnn_mbv3_small_nano_head(
     num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
 ):
     model = fasterrcnn_mbv3_small_nano_head.create_model(
-        num_classes, pretrained, coco_model
+        num_classes, pretrained, coco_model,
         box_detections_per_img=box_detections_per_img
     )
     return model
@@ -121,7 +121,7 @@ def return_fasterrcnn_mini_darknet_nano_head(
     num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
 ):
     model = fasterrcnn_mini_darknet_nano_head.create_model(
-        num_classes, pretrained, coco_model
+        num_classes, pretrained, coco_model,
         box_detections_per_img=box_detections_per_img
     )
     return model
@@ -130,7 +130,7 @@ def return_fasterrcnn_efficientnet_b0(
     num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
 ):
     model = fasterrcnn_efficientnet_b0.create_model(
-        num_classes, pretrained, coco_model
+        num_classes, pretrained, coco_model,
         box_detections_per_img=box_detections_per_img
     )
     return model
@@ -139,7 +139,7 @@ def return_fasterrcnn_nano(
     num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
 ):
     model = fasterrcnn_nano.create_model(
-        num_classes, pretrained, coco_model
+        num_classes, pretrained, coco_model,
         box_detections_per_img=box_detections_per_img
     )
     return model
@@ -148,7 +148,7 @@ def return_fasterrcnn_resnet152(
     num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
 ):
     model = fasterrcnn_resnet152.create_model(
-        num_classes, pretrained, coco_model
+        num_classes, pretrained, coco_model,
         box_detections_per_img=box_detections_per_img
     )
     return model
@@ -166,7 +166,7 @@ def return_fasterrcnn_convnext_small(
     num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
 ):
     model = fasterrcnn_convnext_small.create_model(
-        num_classes, pretrained=pretrained, coco_model=coco_model
+        num_classes, pretrained=pretrained, coco_model=coco_model,
         box_detections_per_img=box_detections_per_img
     )
     return model
@@ -175,7 +175,7 @@ def return_fasterrcnn_convnext_tiny(
     num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
 ):
     model = fasterrcnn_convnext_tiny.create_model(
-        num_classes, pretrained=pretrained, coco_model=coco_model
+        num_classes, pretrained=pretrained, coco_model=coco_model,
         box_detections_per_img=box_detections_per_img
     )
     return model
@@ -184,7 +184,7 @@ def return_fasterrcnn_resnet101(
     num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
 ):
     model = fasterrcnn_resnet101.create_model(
-        num_classes, pretrained=pretrained, coco_model=coco_model
+        num_classes, pretrained=pretrained, coco_model=coco_model,
         box_detections_per_img=box_detections_per_img
     )
     return model
@@ -193,7 +193,7 @@ def return_fasterrcnn_vitdet(
     num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
 ):
     model = fasterrcnn_vitdet.create_model(
-        num_classes, pretrained, coco_model=coco_model
+        num_classes, pretrained, coco_model=coco_model,
         box_detections_per_img=box_detections_per_img
     )
     return model
@@ -202,7 +202,7 @@ def return_fasterrcnn_vitdet_tiny(
     num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
 ):
     model = fasterrcnn_vitdet_tiny.create_model(
-        num_classes, pretrained, coco_model=coco_model
+        num_classes, pretrained, coco_model=coco_model,
         box_detections_per_img=box_detections_per_img
     )
     return model
@@ -211,7 +211,7 @@ def return_fasterrcnn_mobilevit_xxs(
     num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
 ):
     model = fasterrcnn_mobilevit_xxs.create_model(
-        num_classes, pretrained, coco_model=coco_model
+        num_classes, pretrained, coco_model=coco_model,
         box_detections_per_img=box_detections_per_img
     )
     return model
@@ -220,7 +220,7 @@ def return_fasterrcnn_regnet_y_400mf(
     num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
 ):
     model = fasterrcnn_regnet_y_400mf.create_model(
-        num_classes, pretrained, coco_model=coco_model
+        num_classes, pretrained, coco_model=coco_model,
         box_detections_per_img=box_detections_per_img
     )
     return model
@@ -229,7 +229,7 @@ def return_fasterrcnn_vgg16(
     num_classes, pretrained=True, coco_model=False, box_detections_per_img=100
 ):
     model = fasterrcnn_vgg16.create_model(
-        num_classes, pretrained, coco_model=coco_model
+        num_classes, pretrained, coco_model=coco_model,
         box_detections_per_img=box_detections_per_img
     )
     return model

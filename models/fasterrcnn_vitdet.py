@@ -356,7 +356,7 @@ def create_model(
     model = FasterRCNN(
         backbone=backbone,
         num_classes=num_classes,
-        box_roi_pool=roi_pooler
+        box_roi_pool=roi_pooler,
         box_detections_per_img=box_detections_per_img
     )
     return model

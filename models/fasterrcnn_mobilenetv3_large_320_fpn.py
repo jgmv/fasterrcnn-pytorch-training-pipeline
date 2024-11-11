@@ -3,7 +3,7 @@ import torchvision
 from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
 
 def create_model(
-    num_classes, pretrained=True, coco_model=False
+    num_classes, pretrained=True, coco_model=False,
     box_detections_per_img=100
     ):
     

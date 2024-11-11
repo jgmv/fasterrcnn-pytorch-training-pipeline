@@ -42,7 +42,7 @@ def create_model(
         backbone=backbone,
         num_classes=num_classes,
         rpn_anchor_generator=anchor_generator,
-        box_roi_pool=roi_pooler
+        box_roi_pool=roi_pooler,
         box_detections_per_img=box_detections_per_img
     )
 

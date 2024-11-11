@@ -207,7 +207,7 @@ def create_model(
         rpn_anchor_generator=anchor_generator,
         box_roi_pool=roi_pooler,
         box_head=box_head,
-        box_predictor=box_predictor
+        box_predictor=box_predictor,
         box_detections_per_img=box_detections_per_img
     )
     return model
